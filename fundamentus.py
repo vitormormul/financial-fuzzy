@@ -29,6 +29,7 @@ def get_data(html):
         'price_date': format_date(extract_from(tables[0], 3)),
         'sector': extract_from(tables[0], 6),
         'subsector': extract_from(tables[0], 8),
+        'market_value': format_number(extract_from(tables[1], 0)),
         'statement_date': format_date(extract_from(tables[1], 1)),
         'pl': format_number(extract_from(tables[2], 0)),
         'pvpa': format_number(extract_from(tables[2], 2)),
