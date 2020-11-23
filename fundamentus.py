@@ -64,7 +64,7 @@ def to_dataframe(dictionary, columns):
     return df
 
 
-if __name__ == "__main__":
+def main():
     url = 'https://www.fundamentus.com.br/detalhes.php?papel='
     segments = {
         'banks': 73,
@@ -152,3 +152,8 @@ if __name__ == "__main__":
     df = to_dataframe(data, data[0].keys())
     print(df)
     df.to_csv('data.csv', sep=';')
+
+
+if __name__ == '__main__':
+    df = pd.read_csv('data.csv', sep=';')
+    print(df.describe())
