@@ -1,4 +1,4 @@
-from fuzzy_set import FuzzySet
+from .fuzzy_set import FuzzySet
 import matplotlib.pyplot as plt
 import numpy as np
 
