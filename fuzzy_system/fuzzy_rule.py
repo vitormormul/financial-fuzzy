@@ -1,4 +1,4 @@
-from .fuzzy_clause import FuzzyClause
+from fuzzy_clause import FuzzyClause
 
 class FuzzyRule():
 	'''
