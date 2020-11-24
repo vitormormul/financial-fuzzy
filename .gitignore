@@ -1,2 +1,4 @@
 .idea/
 data.csv
+.key/__pycache__
+.fuzzy_system/__pycache__
