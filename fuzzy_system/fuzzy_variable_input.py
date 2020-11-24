@@ -1,4 +1,4 @@
-from fuzzy_variable import FuzzyVariable
+from .fuzzy_variable import FuzzyVariable
 
 class FuzzyInputVariable(FuzzyVariable):
 
