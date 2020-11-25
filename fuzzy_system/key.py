@@ -1,4 +1,4 @@
-
+from 
 
 class Key:
     def __init__(self, minimum, lower_quartile, mean, upper_quartile, maximum):
@@ -24,3 +24,10 @@ class Key:
     @property
     def above_zero(self):
         return self.zero + 0.1
+
+    def input(self):
+        input = FuzzyInputVariable('P/L', self.minimum, self.maximum, 1_000_000)
+        input.add_trapezoidal('Negativo', self.minimum, self.bottom, self.zero, self.above_zero)
+        input.add_triangular('Baixo', self.below_zero, self.zero, self.mean)
+        input.add_triangular('Medio', self.lower_quartile, self.mean, self.upper_quartile)
+        input.add_triangular('Alto', self.mean, self.top, self.maximum)
