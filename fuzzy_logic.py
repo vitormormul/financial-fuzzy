@@ -29,7 +29,7 @@ def plot_fuzzy():
     system.plot_system()
 
 
-def run_fuzzy(pl, pvp, div_yield, roe):
+def run_fuzzy(pl, pvp, div_yield, roe, ticker):
     pl_ = Key('P/L', -329.4, 4.8, 14.6, 26, 462.3)
     pvp_ = Key('P/VPA', -8.4, 1.2, 1.9, 4.4, 21.6)
     div_yield_ = Key('Yield', 0, 0.4, 1.5, 3.9, 14.6, negative=False)
@@ -140,7 +140,7 @@ def run_fuzzy(pl, pvp, div_yield, roe):
         {'Investimento': 'Forte'}
     )
 
-    print(pl, pvp, div_yield, roe)
+    print(f"Ticker: {ticker}, P/L:{pl}, P/VPA: {pvp}, Dividend Yield: {div_yield}, ROE: {roe}")
 
     output = system.evaluate_output(
         {'P/L': pl,
@@ -153,7 +153,5 @@ def run_fuzzy(pl, pvp, div_yield, roe):
 
 
 if __name__ == "__main__":
-
-    run_fuzzy(-158.36, 5.23, 0.0, -3.3)
     plot_fuzzy()
 

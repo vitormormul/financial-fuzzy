@@ -153,8 +153,3 @@ def main():
     print(df)
     df.to_csv('data.csv', sep=';')
 
-
-if __name__ == '__main__':
-    main()
-    df = pd.read_csv('data.csv', sep=';')
-    print(df.describe())

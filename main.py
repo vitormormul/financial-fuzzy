@@ -1,5 +1,8 @@
 import pandas as pd
 from fuzzy_logic import run_fuzzy, plot_fuzzy
+import fundamentus
+
+fundamentus.main()
 
 df = pd.read_csv('data.csv', sep=';')
 
@@ -13,7 +16,7 @@ for ticker in df.ticker.values:
   div_yield = df.loc[df.ticker == ticker]['yield'].values[0]
   roe = df.loc[df.ticker == ticker].roe.values[0]
 
-  investment, price = run_fuzzy(pl, pvp, div_yield, roe)
+  investment, price = run_fuzzy(pl, pvp, div_yield, roe, ticker)
   tickers.append(ticker)
   investments.append(investment)
   prices.append(price)
