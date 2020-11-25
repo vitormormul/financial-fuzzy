@@ -8,12 +8,12 @@ pvp = Key('P/VPA', -8.4, 1.2, 1.9, 4.4, 21.6)
 div_yield = Key('Yield', 0, 0.4, 1.5, 3.9, 14.6, negative=False)
 roe = Key('ROE', -1159.1, 4.8, 10.5, 17.1, 526.8)
 
-investment = FuzzyOutputVariable('Investimento', 0, 100, 1_000_000)
+investment = FuzzyOutputVariable('Investimento', 0, 100, 1000)
 investment.add_trapezoidal('Fraco', 0, 0.1, 25, 50)
 investment.add_triangular('Avaliar', 25, 50, 75)
 investment.add_trapezoidal('Forte', 50, 75, 99.9, 100)
 
-price = FuzzyOutputVariable('Preco', 0, 100, 1_000_000)
+price = FuzzyOutputVariable('Preco', 0, 100, 1000)
 price.add_trapezoidal('Desfavoravel', 0, 0.1, 25, 50)
 price.add_triangular('Avaliar', 25, 50, 75)
 price.add_trapezoidal('Favoravel', 50, 75, 99.9, 100)
@@ -113,13 +113,15 @@ system.add_rule(
     {'Investimento': 'Forte'}
 )
 
-# B3SA3 on November 23rd
-output = system.evaluate_output(
-    {'P/L': 462.27,
-     'P/VPA': 21.32,
-     'Yield': 0.1,
-     'ROE': 4.6}
-)
-print(output)
+def run_fuzzy(pl, pvp, div_yield, roe):
+    print(pl, pvp, div_yield, roe)
 
-# system.plot_system()
+    # B3SA3 on November 23rd
+    output = system.evaluate_output(
+        {'P/L': pl,
+        'P/VPA': pvp,
+        'Yield': div_yield,
+        'ROE': roe}
+    )
+    print(output)
+    return (output['Investimento'], output['Preco'])
