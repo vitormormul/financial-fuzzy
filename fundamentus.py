@@ -155,6 +155,6 @@ def main():
 
 
 if __name__ == '__main__':
-    #df = pd.read_csv('data.csv', sep=';')
-    #print(df.describe())
     main()
+    df = pd.read_csv('data.csv', sep=';')
+    print(df.describe())
