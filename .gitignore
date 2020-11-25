@@ -3,3 +3,5 @@ data.csv
 .key/__pycache__
 .fuzzy_system/__pycache__
 __pycache__
+
+.vscode

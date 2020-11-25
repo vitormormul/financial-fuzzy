@@ -47,7 +47,7 @@ system.add_rule(
 # 4
 system.add_rule(
     {'P/L': 'Alto'},
-    {'Investimento': 'Avaliar',
+    {'Investimento': 'Forte',
      'Preco': 'Desfavoravel'}
 )
 # 5
@@ -59,19 +59,19 @@ system.add_rule(
 # 6
 system.add_rule(
     {'P/VPA': 'Baixo'},
-    {'Investimento': 'Forte',
+    {'Investimento': 'Fraco',
      'Preco': 'Favoravel'}
 )
 # 7
 system.add_rule(
     {'P/VPA': 'Medio'},
-    {'Investimento': 'Forte',
+    {'Investimento': 'Avaliar',
      'Preco': 'Avaliar'}
 )
 # 8
 system.add_rule(
     {'P/VPA': 'Alto'},
-    {'Investimento': 'Avaliar',
+    {'Investimento': 'Forte',
      'Preco': 'Desfavoravel'}
 )
 # 9
