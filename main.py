@@ -1,5 +1,5 @@
 import pandas as pd
-from fuzzy_logic import run_fuzzy
+from fuzzy_logic import run_fuzzy, plot_fuzzy
 
 df = pd.read_csv('data.csv', sep=';')
 
@@ -21,3 +21,5 @@ for ticker in df.ticker.values:
 data = {'Ticker': tickers, 'Investimento': investments, 'Preço': prices}
 dfr = pd.DataFrame(data=data)
 print(dfr)
+dfr.to_csv('results.csv', sep=';')
+plot_fuzzy()
